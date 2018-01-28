@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.pingpongscorekeeper.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/score_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/player_one_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_alignParentTop="true"
+            >
+
+            <TextView
+                android:id="@+id/player_one_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 1"
+                android:textSize="32sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game "
+                android:layout_toLeftOf="@id/player_one_game_number"
+                android:textSize="24sp"
+
+                />
+
+            <TextView
+                android:id="@+id/player_one_game_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_toLeftOf="@id/player_one_score_label"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_one_score_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Score: "
+                android:layout_toLeftOf="@id/player_one_score"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_one_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_one_games_won_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Games Won: "
+                android:layout_toLeftOf="@id/player_one_games_won"
+                android:layout_below="@id/player_one_score_label"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/player_one_games_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/player_one_score"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:id="@+id/player_one_score_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player_one_label"
+                android:layout_centerHorizontal="true"
+                android:text="Player 1 point"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="48sp"
+                android:layout_below="@id/player_one_score_button"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Game: "
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/current_game_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="24sp"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset game"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset match"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/player_two_layout_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_alignParentBottom="true"
+            >
+
+            <TextView
+                android:id="@+id/player_two_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 2"
+                android:textSize="32sp"
+                android:layout_alignParentBottom="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game "
+                android:layout_toLeftOf="@id/player_two_game_number"
+                android:layout_alignParentBottom="true"
+                android:textSize="24sp"
+
+                />
+
+            <TextView
+                android:id="@+id/player_two_game_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_toLeftOf="@id/player_two_score_label"
+                android:layout_alignParentBottom="true"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_two_score_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Score: "
+                android:layout_toLeftOf="@id/player_two_score"
+                android:layout_alignParentBottom="true"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_two_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/player_two_games_won_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Games Won: "
+                android:layout_toLeftOf="@id/player_two_games_won"
+                android:layout_above="@id/player_two_score_label"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/player_two_games_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_above="@id/player_two_score"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:id="@+id/player_two_score_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/player_two_label"
+                android:layout_centerHorizontal="true"
+                android:text="Player 2 point"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="48sp"
+                android:layout_above="@id/player_two_score_button"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
