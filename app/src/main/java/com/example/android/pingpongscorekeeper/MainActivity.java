@@ -1,5 +1,7 @@
 package com.example.android.pingpongscorekeeper;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
     int gamesWonByPlayerOne = 0;
     int gamesWonByPlayerTwo = 0;
     int currentGame = 1;
-
-    String gameWinner;
     String matchWinner;
 
     @Override
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
             currentGame = currentGame + 1;
             if (isMatchWinner(gamesWonByPlayerOne)) {
                 matchWinner = "Player 1";
-                displayMatchWinMessage(matchWinner);
-            }
-            else {
+                matchWinnerAlert(matchWinner);
+                resetMatch();
+            } else {
                 displayCurrentGame(currentGame);
                 resetPlayerScores();
             }
@@ -49,14 +49,36 @@ public class MainActivity extends AppCompatActivity {
             currentGame = currentGame + 1;
             if (isMatchWinner(gamesWonByPlayerTwo)) {
                 matchWinner = "Player 2";
-                displayMatchWinMessage(matchWinner);
-            }
-            else {
+                matchWinnerAlert(matchWinner);
+                resetMatch();
+            } else {
                 displayCurrentGame(currentGame);
                 resetPlayerScores();
             }
         }
     }
+
+    public void resetMatchButton(View view) {
+        resetMatch();
+    }
+
+    public void resetGameButton(View view) {
+        resetPlayerScores();
+    }
+
+    private void matchWinnerAlert(String matchWinner) {
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle("Winner");
+        alertDialog.setMessage(matchWinner + " wins the match!");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
+
     private void displayPlayerOneScore(int playerOneScore) {
         TextView scoreView = findViewById(R.id.player_one_score);
         scoreView.setText(String.valueOf(playerOneScore));
@@ -68,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isWinner(int score) {
-        return ((score >= 11) && ((playerOneScore - playerTwoScore >=2) || (playerOneScore - playerTwoScore <= -2)));
+        return ((score >= 11) && ((playerOneScore - playerTwoScore >= 2) || (playerOneScore - playerTwoScore <= -2)));
     }
 
     private void displayGamesWonByPlayerOne(int gamesWonByPlayerOne) {
@@ -83,11 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isMatchWinner(int gamesWonByPlayer) {
         return (gamesWonByPlayer == 3);
-    }
-
-    private void displayMatchWinMessage(String matchWinner) {
-        TextView messageView = findViewById(R.id.winner_message);
-        messageView.setText(String.valueOf(matchWinner + " wins the match!!!"));
     }
 
     private void resetPlayerScores() {
@@ -105,4 +122,16 @@ public class MainActivity extends AppCompatActivity {
         TextView playerTwoGameView = findViewById(R.id.player_two_game_number);
         playerTwoGameView.setText(String.valueOf(currentGame));
     }
+
+    private void resetMatch() {
+        resetPlayerScores();
+        gamesWonByPlayerOne = 0;
+        gamesWonByPlayerTwo = 0;
+        displayGamesWonByPlayerOne(gamesWonByPlayerOne);
+        displayGamesWonByPlayerTwo(gamesWonByPlayerTwo);
+        currentGame = 1;
+        displayCurrentGame(currentGame);
+        matchWinner = "";
+    }
+
 }
