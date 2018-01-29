@@ -56,7 +56,7 @@
             android:text="0"
             android:textColor="#E1F5FE"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/player_one_games_won_label"
@@ -91,8 +91,7 @@
             android:onClick="playerOneScoresAPoint"
             android:text="\n+1"
             android:textSize="32sp"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 
@@ -105,40 +104,36 @@
         android:orientation="horizontal">
 
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ping_pong_ball"
+            android:onClick="resetGameButton"
+            android:text="Reset\ngame" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ping_pong_ball"
-                android:onClick="resetGameButton"
-                android:text="Reset\ngame" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game "
+            android:textColor="#E1F5FE"
+            android:textSize="24sp"
+            android:layout_marginLeft="8dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="bottom"
-                android:text="Game "
-                android:textColor="#E1F5FE"
-                android:textSize="24sp"
-                android:layout_marginLeft="8dp"
-                />
+        <TextView
+            android:id="@+id/current_game_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="#E1F5FE"
+            android:textSize="24sp"
+            android:layout_marginRight="8dp" />
 
-            <TextView
-                android:id="@+id/current_game_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textColor="#E1F5FE"
-                android:textSize="24sp"
-                android:layout_marginRight="8dp"
-                />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ping_pong_ball"
-                android:onClick="resetMatchButton"
-                android:text="Reset\nmatch" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ping_pong_ball"
+            android:onClick="resetMatchButton"
+            android:text="Reset\nmatch" />
 
     </LinearLayout>
 
@@ -197,8 +192,7 @@
             android:text="0"
             android:textColor="#E1F5FE"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/player_two_games_won_label"
@@ -233,8 +227,7 @@
             android:onClick="playerTwoScoresAPoint"
             android:text="+1\n"
             android:textSize="32sp"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 
