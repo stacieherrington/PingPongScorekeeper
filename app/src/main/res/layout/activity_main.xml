@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:padding="8dp">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/player_one_label"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Player 1"
             android:textColor="#E1F5FE"
-            android:textSize="32sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/player_one_score"
-            android:text=" Score: "
+            android:text=": "
             android:textColor="#E1F5FE"
             android:textSize="24sp" />
 
@@ -54,8 +54,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:text="0"
-            android:textColor="#D50000"
-            android:textSize="24sp" />
+            android:textColor="#E1F5FE"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/player_one_games_won_label"
@@ -82,11 +83,16 @@
             android:id="@+id/player_one_score_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/green_ping_pong_paddle"
             android:layout_below="@id/player_one_label"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_marginTop="56dp"
             android:onClick="playerOneScoresAPoint"
-            android:text="Player 1 point" />
+            android:text="\n+1"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            />
 
     </RelativeLayout>
 
@@ -96,20 +102,26 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ping_pong_ball"
+                android:onClick="resetGameButton"
+                android:text="Reset\ngame" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Current Game: "
+                android:gravity="bottom"
+                android:text="Game "
                 android:textColor="#E1F5FE"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_marginLeft="8dp"
+                />
 
             <TextView
                 android:id="@+id/current_game_number"
@@ -117,23 +129,16 @@
                 android:layout_height="wrap_content"
                 android:text="1"
                 android:textColor="#E1F5FE"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_marginRight="8dp"
+                />
 
-        </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="resetGameButton"
-            android:text="Reset game" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="resetMatchButton"
-            android:text="Reset match" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ping_pong_ball"
+                android:onClick="resetMatchButton"
+                android:text="Reset\nmatch" />
 
     </LinearLayout>
 
@@ -142,7 +147,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="8dp">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/player_two_label"
@@ -151,7 +156,7 @@
             android:layout_alignParentBottom="true"
             android:text="Player 2"
             android:textColor="#E1F5FE"
-            android:textSize="32sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -178,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@id/player_two_score"
-            android:text=" Score: "
+            android:text=": "
             android:textColor="#E1F5FE"
             android:textSize="24sp" />
 
@@ -190,8 +195,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:text="0"
-            android:textColor="#D50000"
-            android:textSize="24sp" />
+            android:textColor="#E1F5FE"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/player_two_games_won_label"
@@ -218,11 +225,16 @@
             android:id="@+id/player_two_score_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/red_ping_pong_paddle"
             android:layout_above="@id/player_two_label"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="56dp"
+            android:gravity="center"
             android:onClick="playerTwoScoresAPoint"
-            android:text="Player 2 point" />
+            android:text="+1\n"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            />
 
     </RelativeLayout>
 
